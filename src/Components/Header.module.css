@@ -1,0 +1,40 @@
+/*Arquivo dinamico de estilização do componente Header
+utilizando CSS Module
+*/
+
+.header {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); /*dist. cima | dist. baixo | blur radius | cor*/
+  position: fixed; /*Posição fixada do elemento fixada*/
+  top: 0; /*Elemento fixado no topo da página*/
+  width: 100%; /*Após fixar a posição ele ficou contraido no canto esquerdo*/
+  z-index: 100; /*Indice maior pra ficar acima dos demais elemento da página*/
+  background-color: white; /*Cor branco pra perder o padrão "vazado", transparente */
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between; /*Separou os elementos dando espaçamento entre eles*/
+  align-items: center; /*Alinhamento horizontal ao centro */
+  height: 4rem;
+}
+
+.logo {
+  padding: 0.5rem 0;
+}
+
+.login {
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.login::after {
+  content: ''; /*Insere um contéudo antes (before) ou depois (after) do elemento*/
+  display: inline-block;
+  width: 14px;
+  height: 17px;
+  background: url('../Assets/usuario.svg') no-repeat center center;
+  margin-left: 0.5rem;
+  position: relative; /*Elemento pode ser posicionado, co-relacionado a regra abaixo*/
+  top: -1px; /*posiciona o elemento diminuindo a distancia do topo com -1px*/
+}

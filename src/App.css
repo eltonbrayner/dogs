@@ -1,0 +1,65 @@
+/*Estilização Global da Aplicação*/
+/*Este arquivo CSS pertence ao arquivo principal da aplicação
+  que engloba todos os outros arquivos (Footer, Header, Home e etc...)
+  Devido a isto todos os demais arquivos (filho) herdam essas regras e podem usar as variaveis*/
+
+/*Informações interessantes:
+  1rem = 16px
+  align-*: Alinhamento vertical (display: flex)
+  justify-*: Alinhamento horizontal (display: flex)
+*/
+* {
+  box-sizing: border-box; /*Soma sempre o Padding + Border no Height/Width*/
+}
+
+body {
+  padding-top: 4rem; /*Esse valor é exato em relação ao nav do header que tem exatamente 4rem de height*/
+  margin: 0px;
+  color: #333;
+  /*Se não tiver Helvetica usa Arial, se não sans-serif*/
+  --type-first: Helvetica, Arial, sans-serif; /*Variavel no CSS se define após os 2 hifens (--)*/
+  --type-second: 'Spectral', Georgia; /*Variavel no CSS se define após os 2 hifens (--)*/
+  font-family: var(
+    --type-first
+  ); /*Para utilizar a variavel chamamos ela dentro do var*/
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+
+ul,
+li {
+  list-style: none; /*Retira as bolinhas das listas*/
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  /*Imagem responsiva: imagem só expandirá até a capacidade máxima do container que estiver*/
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: #333;
+}
+
+a {
+  text-decoration: none; /*Retira o sublinhado de todos os itens do site*/
+}
+
+.container {
+  /*Classe geral*/
+  max-width: 50rem;
+  padding: 0 1rem; /*0 cima-e-baixo e 1rem direita-e-esquerda*/
+  margin: 0 auto; /*Alinhamento ao centro*/
+}
