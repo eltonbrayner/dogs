@@ -1,0 +1,35 @@
+.wrapper {
+  margin-bottom: 1rem;
+}
+
+.input {
+  border: 1px solid #eee;
+  display: block;
+  width: 100%; /*100% do container que eles estão*/
+  font-size: 1rem;
+  padding: 0.8rem; /*Largura interior do input ao redor do text*/
+  border-radius: 0.4rem; /*Mesma border-radius do button*/
+  background: #eee; /*Borda e background com a mesma cor devido o efeito de transition do focus/hover*/
+  transition: 0.2s; /*Transition pra mudança das regras do focus/hover*/
+}
+
+.input:focus,
+.input:hover {
+  outline: none; /*Retira efeito padrão de borda sobre o input*/
+  border-color: #fb1;
+  background: 'white';
+  box-shadow: 0 0 0 3px #fea;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  line-height: 1;
+  padding-bottom: 0.5rem;
+}
+
+.error {
+  color: #f31;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

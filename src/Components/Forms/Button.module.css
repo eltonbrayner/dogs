@@ -1,0 +1,29 @@
+.button {
+  font-size: 1rem;
+  font-family: var(--type-first);
+  cursor: pointer; /*Define a mãozinha sobre o botão*/
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #fb1;
+  color: #764701; /* Amarelo mais escuro, tom sobre tom, no texto */
+  min-width: 8rem;
+  padding: 0.8rem 1.2rem; /*Padding é ideal para definir o tamanho do BTN, centralizando texto*/
+  box-sizing: border-box; /*Ele não soma o valor da caixa com a borda*/
+  transition: 0.1s; /*Transição do focus/hover (que está estilizado com shadow)*/
+}
+
+.button:hover,
+.button:focus {
+  outline: none; /*Retirou a linha que fica ao redor da caixa com focus*/
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+  /*1° Sombra:
+  A sombra não está para nenhum lado (nem x nem y) não tem blur mas tem 3 px de largura na cor amarelo claro
+  2 Sombra:
+  Não está para nenhum lado (x ou y) porém tem 1px a mais do que a anterior e tem a cor mais forte fazendo um efeito de borda com o px (1px) que sobresai
+  */
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
