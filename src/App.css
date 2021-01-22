@@ -8,6 +8,10 @@
   align-*: Alinhamento vertical (display: flex)
   justify-*: Alinhamento horizontal (display: flex)
 */
+
+/*Font-family importado do Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+
 * {
   box-sizing: border-box; /*Soma sempre o Padding + Border no Height/Width*/
 }
@@ -18,7 +22,7 @@ body {
   color: #333;
   /*Se não tiver Helvetica usa Arial, se não sans-serif*/
   --type-first: Helvetica, Arial, sans-serif; /*Variavel no CSS se define após os 2 hifens (--)*/
-  --type-second: 'Spectral', Georgia; /*Variavel no CSS se define após os 2 hifens (--)*/
+  --type-second: 'Spectral', georgia; /*Variavel no CSS se define após os 2 hifens (--)*/
   font-family: var(
     --type-first
   ); /*Para utilizar a variavel chamamos ela dentro do var*/
@@ -55,6 +59,7 @@ input {
 
 a {
   text-decoration: none; /*Retira o sublinhado de todos os itens do site*/
+  color: #333;
 }
 
 .container {
@@ -62,4 +67,40 @@ a {
   max-width: 50rem;
   padding: 0 1rem; /*0 cima-e-baixo e 1rem direita-e-esquerda*/
   margin: 0 auto; /*Alinhamento ao centro*/
+}
+
+.title {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative; /*Declarou relative para poder colocar o quadrado no after como absolute*/
+  z-index: 1; /*Uma posição a frente do after*/
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fb1;
+  position: absolute;
+  bottom: 5px; /*5 pixel de distancia do bottom, como está absoluto, sobrepos o title */
+  left: -5px; /*-5 pixel ele se aproximou mais do lado esquerdo */
+  border-radius: 0.2rem;
+  z-index: -1; /*Uma posição atrás do title*/
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 1s forwards; /*Forwards = permanece no estado final da animação */
+}
+
+@keyframes animeLeft {
+  /*O nome do keyframes vem da propriedade ANIMATION*/
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }
