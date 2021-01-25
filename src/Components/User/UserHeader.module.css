@@ -1,0 +1,8 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto; /*O titulo ocupou 1fr e os icones ocuparam auto, só o que precisar*/
+  align-items: center; /*Para alinhar o titulo e os icones ao centro na vertical*/
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  position: relative; /*Necessário para o MENU MOBILE*/
+}
