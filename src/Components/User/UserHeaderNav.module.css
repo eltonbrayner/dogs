@@ -96,7 +96,16 @@ e depois inserido os outros dois traços com sombra fixas em cima e em baixo.
   box-shadow: 0 1px 2px rgba(0, 0, 0, 2);
   border-radius: 0.2rem;
   transform: translateX(-10px);
+  opacity: 0;
+  pointer-events: none; /*Retira o evento de CLICK (pointer) enquanto ele não for ativo*/
+}
+
+.navMobileActive {
+  transition: 0.3s;
+  transform: initial; /*Volta pro valor inicial que ele tinha */
   opacity: 1;
+  z-index: 100; /*Ficará em cima de tudo que aparecer sempre*/
+  pointer-events: initial; /*Volta a ativar o evento de Click (pointer) */
 }
 
 .navMobile a,
