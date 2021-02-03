@@ -1,0 +1,57 @@
+/* Seletor pega apenas o segundo elemento */
+.photo:nth-child(2) {
+  grid-column: 2 / 4; /*Ocuparará da coluna 2 até a coluna 4*/
+  grid-row: span 2; /*Ocupará 2 linhas*/
+}
+
+@media (max-width: 40rem) {
+  /* Seletor pega apenas o segundo elemento */
+  .photo:nth-child(2) {
+    grid-column: initial; /*Ocuparará da coluna 2 até a coluna 4*/
+    grid-row: initial; /*Ocupará 2 linhas*/
+  }
+}
+
+.photo {
+  display: grid;
+  border-radius: 0.2rem; /*Arredonda os cantos*/
+  overflow: hidden; /*Se não tiver overflow hidden não consegue arredondar*/
+  cursor: pointer;
+}
+
+/*Colocando o span por cima da foto através do grid-area: 1/1*/
+.photo img {
+  grid-area: 1/1;
+}
+
+.photo span {
+  background: rgba(0, 0, 0, 0.3); /*Escureceu a foto*/
+  color: white;
+  text-align: center;
+
+  /*Alinhamento do texto no centro da imagem*/
+  /* display: flex; será dado quando fizer o mouse hover */
+  align-items: center;
+  justify-content: center;
+
+  /*Colocando o span por cima da foto através do grid-area: 1/1*/
+  grid-area: 1/1;
+
+  display: none; /*Só será mostrado quando o mouse fizer hover*/
+}
+
+/*Cria um icone ANTES do elemento span (contador de visualização)*/
+.photo span::before {
+  /*Tamanho exato do icone*/
+  width: 16px;
+  height: 10px;
+
+  content: '';
+  display: inline-block;
+  margin-right: 0.25rem;
+  background: url('../../Assets/visualizacao.svg') no-repeat;
+}
+
+.photo:hover span {
+  display: flex;
+}
